@@ -1,8 +1,9 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
+import Product from "./Product";
 class App extends Component {
   render() {
     return (
@@ -16,8 +17,9 @@ class App extends Component {
               data-target="#navbarNavAltMarkup"
               aria-controls="navbarNavAltMarkup"
               aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"/>
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon" />
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
@@ -27,9 +29,9 @@ class App extends Component {
                 <Link class="nav-item nav-link" to="/">
                   Home
                 </Link>
-                <a class="nav-item nav-link" href="/">
+                <Link class="nav-item nav-link" to="/product">
                   Products
-                </a>
+                </Link>
                 <Link class="nav-item nav-link disabled" to="/about">
                   About
                 </Link>
@@ -37,8 +39,9 @@ class App extends Component {
             </div>
           </nav>
           <div className="container">
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/about" component={About}/>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/product" component={Product} />
           </div>
         </div>
       </Router>
