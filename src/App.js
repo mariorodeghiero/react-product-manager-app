@@ -9,9 +9,9 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <button
-              class="navbar-toggler"
+              className="navbar-toggler"
               type="button"
               data-toggle="collapse"
               data-target="#navbarNavAltMarkup"
@@ -19,20 +19,20 @@ class App extends Component {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon" />
+              <span className="navbar-toggler-icon" />
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="/">
-                  Products Manager<span class="sr-only">(current)</span>
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div className="navbar-nav">
+                <a className="nav-item nav-link active" href="/">
+                  Products Manager<span className="sr-only">(current)</span>
                 </a>
-                <Link class="nav-item nav-link" to="/">
+                <Link className="nav-item nav-link" to="/">
                   Home
                 </Link>
-                <Link class="nav-item nav-link" to="/product">
+                <Link className="nav-item nav-link" to="/products">
                   Products
                 </Link>
-                <Link class="nav-item nav-link disabled" to="/about">
+                <Link className="nav-item nav-link disabled" to="/about">
                   About
                 </Link>
               </div>
@@ -41,7 +41,7 @@ class App extends Component {
           <div className="container">
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/product" component={Product} />
+            <Route path="/products" component={Product} />
           </div>
         </div>
       </Router>
