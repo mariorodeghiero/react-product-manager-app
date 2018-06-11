@@ -1,5 +1,26 @@
 {
-  "products": [],
+  "products": [
+    {
+      "id": 1,
+      "product": "Item 1",
+      "category": 1
+    },
+    {
+      "id": 2,
+      "product": "Item 2",
+      "category": 1
+    },
+    {
+      "id": 3,
+      "product": "Item 1",
+      "category": 2
+    },
+    {
+      "id": 4,
+      "product": "Item 1",
+      "category": 3
+    }
+  ],
   "categories": [
     {
       "id": 1,
@@ -8,6 +29,10 @@
     {
       "id": 2,
       "category": "Food"
+    },
+    {
+      "id": 3,
+      "category": "Utilities"
     }
   ]
 }

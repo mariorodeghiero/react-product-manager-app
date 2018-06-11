@@ -36,7 +36,6 @@ class Product extends Component {
             {this.state.categories.map((cat, index) =>
               this.renderCategory(cat, index)
             )}
-            {console.log(this.state.categories[0])}
           </ul>
         </div>
         <div className="col-md-10">
