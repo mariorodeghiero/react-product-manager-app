@@ -11,11 +11,19 @@ class Product extends Component {
     this.state = {
       categories: []
     };
+
+    this.handleNewCategory = this.handleNewCategory.bind(this);
+    this.loadCategories = this.loadCategories.bind(this);
   }
-  componentDidMount(props) {
+
+  loadCategories() {
     axios.get("http://localhost:3001/categories").then(resp => {
       this.setState({ categories: resp.data });
     });
+  }
+
+  componentDidMount(props) {
+    this.loadCategories();
   }
 
   renderCategory(cat, index) {
@@ -25,6 +33,21 @@ class Product extends Component {
       </li>
     );
   }
+
+  handleNewCategory(key) {
+    if (key.keyCode === 13) {
+      console.log("true");
+      axios
+        .post("http://localhost:3001/categories", {
+          category: this.refs.category.value
+        })
+        .then(resp => {
+          this.refs.category.value = "";
+          this.loadCategories();
+        });
+    }
+  }
+
   render() {
     const { match } = this.props;
     // const { categories } = this.state;
@@ -37,6 +60,14 @@ class Product extends Component {
               this.renderCategory(cat, index)
             )}
           </ul>
+          <div className="card card-body bg-light">
+            <input
+              onKeyUp={this.handleNewCategory}
+              type="text"
+              ref="category"
+              placeholder="new category"
+            />
+          </div>
         </div>
         <div className="col-md-10">
           <h1>Products</h1>
