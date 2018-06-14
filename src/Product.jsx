@@ -12,6 +12,7 @@ class Product extends Component {
       categories: []
     };
 
+    this.renderCategory = this.renderCategory.bind(this);
     this.handleNewCategory = this.handleNewCategory.bind(this);
     this.loadCategories = this.loadCategories.bind(this);
   }
@@ -26,10 +27,26 @@ class Product extends Component {
     this.loadCategories();
   }
 
+  removeCategory(category) {
+    axios
+      .delete("http://localhost:3001/categories/" + category.id)
+      .then(resp => {
+        this.loadCategories();
+      });
+  }
+
   renderCategory(cat, index) {
     return (
       <li key={cat.id}>
         <Link to={`/products/category/${cat.id}`}>{cat.category}</Link>
+        <button
+          onClick={() => this.removeCategory(cat)}
+          type="button"
+          className="close"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
       </li>
     );
   }
@@ -62,6 +79,7 @@ class Product extends Component {
           </ul>
           <div className="card card-body bg-light">
             <input
+              className="form-control"
               onKeyUp={this.handleNewCategory}
               type="text"
               ref="category"
