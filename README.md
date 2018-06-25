@@ -2,6 +2,11 @@
 
 A product management application, created with ReactJS based on the DevReactJs course offered by DevPleno.
 
+#build with
+
+- ReactJS
+- create-react-app
+
 ## Authors
 
 - [Mário Antônio do Amaral Rodeghiero](https://github.com/mariorodeghiero)
