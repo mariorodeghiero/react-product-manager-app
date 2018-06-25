@@ -4,7 +4,35 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Product from "./Product";
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.loadCategories = this.loadCategories.bind(this);
+    this.removeCategory = this.removeCategory.bind(this);
+    this.createCategory = this.createCategory.bind(this);
+
+    this.state = {
+      categories: []
+    };
+  }
+  loadCategories() {
+    this.props.api.loadCategories().then(resp => {
+      this.setState({ categories: resp.data });
+    });
+  }
+
+  removeCategory(category) {
+    this.props.api
+      .removeCategories(category.id)
+      .then(resp => this.loadCategories());
+  }
+
+  createCategory(category) {
+    this.props.api.createCategory(category).then(resp => this.loadCategories());
+  }
+
   render() {
     return (
       <Router>
@@ -41,7 +69,18 @@ class App extends Component {
           <div className="container">
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
-            <Route path="/products" component={Product} />
+            <Route
+              path="/products"
+              render={props => (
+                <Product
+                  {...props}
+                  loadCategories={this.loadCategories}
+                  removeCategory={this.removeCategory}
+                  categories={this.state.categories}
+                  createCategory={this.createCategory}
+                />
+              )}
+            />
           </div>
         </div>
       </Router>

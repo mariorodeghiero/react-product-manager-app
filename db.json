@@ -17,8 +17,8 @@
     },
     {
       "id": 4,
-      "product": "Item 1",
-      "category": 3
+      "product": "Item 1, s",
+      "category": 4
     }
   ],
   "categories": [
@@ -35,8 +35,12 @@
       "category": "Utilities"
     },
     {
-      "category": "Tools",
+      "category": "tools",
       "id": 4
+    },
+    {
+      "category": "new",
+      "id": 5
     }
   ]
 }
