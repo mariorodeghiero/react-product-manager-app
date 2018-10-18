@@ -24,7 +24,7 @@
   "categories": [
     {
       "id": 1,
-      "category": "Cleaning"
+      "category": "Cleaning up"
     },
     {
       "id": 2,
@@ -41,6 +41,10 @@
     {
       "category": "new",
       "id": 5
+    },
+    {
+      "category": "Milks",
+      "id": 6
     }
   ]
 }
