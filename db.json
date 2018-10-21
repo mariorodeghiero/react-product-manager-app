@@ -19,6 +19,16 @@
       "id": 4,
       "product": "Item 1, s",
       "category": 4
+    },
+    {
+      "product": "Soap",
+      "category": "1",
+      "id": 5
+    },
+    {
+      "product": "hammer",
+      "category": "4",
+      "id": 6
     }
   ],
   "categories": [
