@@ -29,6 +29,46 @@
       "product": "hammer",
       "category": "4",
       "id": 6
+    },
+    {
+      "product": "Goat",
+      "category": "6",
+      "id": 7
+    },
+    {
+      "product": "Goat",
+      "category": "6",
+      "id": 8
+    },
+    {
+      "product": "goat",
+      "category": "6",
+      "id": 9
+    },
+    {
+      "product": "Goat",
+      "category": "6",
+      "id": 10
+    },
+    {
+      "product": "new",
+      "category": "3",
+      "id": 11
+    },
+    {
+      "product": "test",
+      "category": "1",
+      "id": 12
+    },
+    {
+      "product": "meat",
+      "category": "2",
+      "id": 13
+    },
+    {
+      "product": "cow",
+      "category": "6",
+      "id": 14
     }
   ],
   "categories": [

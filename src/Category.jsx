@@ -11,9 +11,9 @@ class Category extends Component {
     };
   }
   loadData(id) {
-    axios.get("http://localhost:3001/products?category=" + id).then(res => {
-      this.setState({ products: res.data });
-    });
+    this.props.loadProducts(id);
+    // axios.get("http://localhost:3001/products?category=" + id).then(res => {
+    // this.setState({ products: res.data }); });
     axios.get("http://localhost:3001/categories/" + id).then(res => {
       this.setState({ category: res.data });
     });
@@ -41,7 +41,7 @@ class Category extends Component {
     return (
       <div>
         <h1>{this.state.category.category}</h1>{" "}
-        <div>{this.state.products.map(this.renderProduct)}</div>
+        <div>{this.props.products.map(this.renderProduct)}</div>
         {console.log(JSON.stringify(this.props.match))}{" "}
       </div>
     );
